@@ -1,4 +1,3 @@
-
 import java.net.URL;
 import java.util.ResourceBundle;
 import javafx.fxml.FXML;
@@ -8,6 +7,13 @@ import javax.swing.JOptionPane;
 import javafx.event.ActionEvent;
 import javafx.scene.control.Button;
 import javafx.scene.control.TitledPane;
+import operacoes.OperacoesTipo1.Cos;
+import operacoes.OperacoesTipo1.Lb;
+import operacoes.OperacoesTipo1.Ln;
+import operacoes.OperacoesTipo1.Log;
+import operacoes.OperacoesTipo1.Operacao1;
+import operacoes.OperacoesTipo1.Sen;
+import operacoes.OperacoesTipo1.Tan;
 import operacoes.OperacoesTipo2.Divisao;
 import operacoes.OperacoesTipo2.Multiplicacao;
 import operacoes.OperacoesTipo2.Operacao2;
@@ -18,26 +24,33 @@ import operacoes.OperacoesTipo2.Exponenciacao;
 
 public class calculadoraController implements Initializable{
     Double x, y, res;
-    Operacao2 []operacoes = {new Soma(), new Subtracao(), new Multiplicacao(), new Divisao(), new Raiz(), new Exponenciacao()};
+    Operacao2 []operacoes2 = {new Soma(), new Subtracao(), new Multiplicacao(), new Divisao(), new Raiz(), new Exponenciacao()};
+    Operacao1 []operacoes1 = {new Lb(), new Ln(), new Log(), new Cos(), new Sen(), new Tan()};
     //inicia o vetor com todas as operações;
     
-    @FXML
-    private Button Ans;
-
     @FXML
     private TitledPane Calculadora;
 
     @FXML
-    private Button Soma;
+    private Button ans;
 
     @FXML
-    private Button Subtracao;
+    private Button cosseno;
 
     @FXML
     private Button divisao;
 
     @FXML
     private Button expoente;
+
+    @FXML
+    private Button logaritmo10;
+
+    @FXML
+    private Button logaritmo2;
+
+    @FXML
+    private Button logaritmoNatural;
 
     @FXML
     private Button multiplicacao;
@@ -47,6 +60,18 @@ public class calculadoraController implements Initializable{
 
     @FXML
     private Button raiz;
+
+    @FXML
+    private Button seno;
+
+    @FXML
+    private Button soma;
+
+    @FXML
+    private Button subtracao;
+
+    @FXML
+    private Button tangente;
 
     @FXML
     private TextField txtResultado;
@@ -66,12 +91,12 @@ public class calculadoraController implements Initializable{
     }
 
     @FXML
-    void Somar(ActionEvent event) {
+    void somar(ActionEvent event) {
         calcular("+");
     }
 
     @FXML
-    void Subtrair(ActionEvent event) {
+    void subtrair(ActionEvent event) {
         calcular("-");
     }
 
@@ -86,13 +111,43 @@ public class calculadoraController implements Initializable{
     }
 
     @FXML
-    void Exponenciacao(ActionEvent event) {
+    void exponenciacao(ActionEvent event) {
         calcular("^");
     }
 
     @FXML
     void radiciacao(ActionEvent event) {
         calcular("sqrt");
+    }
+
+    @FXML
+    void encontrarCos(ActionEvent event) {
+        calcular("cos", txtX);
+    }
+
+    @FXML
+    void encontrarSin(ActionEvent event) {
+        calcular("sin", txtX);
+    }
+
+    @FXML
+    void encontrarTan(ActionEvent event) {
+        calcular("tan", txtX);
+    }
+    
+    @FXML
+    void log10(ActionEvent event) {
+        calcular("log", txtX);
+    }
+
+    @FXML
+    void logBinario(ActionEvent event) {
+        calcular("lb", txtX);
+    }
+
+    @FXML
+    void logEuler(ActionEvent event) {
+        calcular("ln", txtX);
     }
 
     @FXML
@@ -132,6 +187,15 @@ public class calculadoraController implements Initializable{
         }
     }
     
+    void calcular(String simbolo, TextField txtX){
+        try{
+            setX();
+            getXY(simbolo);
+        } catch(Exception e) {
+            JOptionPane.showConfirmDialog(null, e.getMessage(), "Alerta", JOptionPane.WARNING_MESSAGE);
+        }
+    }
+    
     void setXY() throws Exception{
         //pega o respectivo valor nos campos x e y
         try{
@@ -152,6 +216,9 @@ public class calculadoraController implements Initializable{
         try{
             x = Double.parseDouble(txtX.getText());
         } catch(NumberFormatException e) {
+            txtX.setText(null);
+            txtY.setText(null);
+            txtResultado.setText(null);
             throw new Exception("O campo X não pode conter texto.");
         } catch (NullPointerException e){
             throw new Exception("O campo X não pode estar vazio.");
@@ -171,13 +238,16 @@ public class calculadoraController implements Initializable{
         txtX.setText(null);
         txtY.setText(null);
     }
-    
+
     Double res(String simbolo) throws Exception{
         //no for ele procura a operação q for feita pelo simbolo informado
-        
-        for(Operacao2 op: operacoes)
+        for(Operacao2 op: operacoes2)
             if(op.getSimbolo().equals(simbolo))
                 return op.executar(x, y);
+
+        for(Operacao1 op: operacoes1)
+            if(op.getSimbolo().equals(simbolo))
+                return op.executar(x);
 
         throw new RuntimeException("Impossivél.");
     }

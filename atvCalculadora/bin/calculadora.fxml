@@ -39,14 +39,14 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<TitledPane fx:id="Calculadora" animated="false" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="452.0" prefWidth="700.0" text="calculadora" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="calculadoraController">
+<TitledPane fx:id="Calculadora" animated="false" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="452.0" prefWidth="700.0" text="Calculadora" textFill="#681cff" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="calculadoraController">
   <content>
     <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
          <children>
             <TextField fx:id="txtY" layoutX="42.0" layoutY="124.0" prefHeight="30.0" prefWidth="165.0" />
             <TextField fx:id="txtX" layoutX="42.0" layoutY="83.0" prefHeight="30.0" prefWidth="165.0" />
             <TextField fx:id="txtResultado" layoutX="42.0" layoutY="208.0" prefHeight="30.0" prefWidth="165.0" />
-            <Button fx:id="Soma" alignment="CENTER" layoutX="261.0" layoutY="83.0" mnemonicParsing="false" onAction="#Somar" prefHeight="35.0" prefWidth="60.0" text="+">
+            <Button fx:id="soma" alignment="CENTER" layoutX="261.0" layoutY="83.0" mnemonicParsing="false" onAction="#somar" prefHeight="35.0" prefWidth="60.0" text="+">
                <font>
                   <Font name="Arial" size="18.0" />
                </font>
@@ -56,7 +56,7 @@
                   <Font name="Arial" size="18.0" />
                </font>
             </Button>
-            <Button fx:id="Subtracao" alignment="CENTER" layoutX="261.0" layoutY="123.0" mnemonicParsing="false" onAction="#Subtrair" prefHeight="35.0" prefWidth="60.0" text="-" textAlignment="CENTER">
+            <Button fx:id="subtracao" alignment="CENTER" layoutX="261.0" layoutY="123.0" mnemonicParsing="false" onAction="#subtrair" prefHeight="35.0" prefWidth="60.0" text="-" textAlignment="CENTER">
                <font>
                   <Font name="Arial" size="18.0" />
                </font>
@@ -66,7 +66,7 @@
                   <Font name="Arial" size="18.0" />
                </font>
             </Button>
-            <Button fx:id="Ans" alignment="CENTER" layoutX="427.0" layoutY="203.0" mnemonicParsing="false" onAction="#memorianterior" prefHeight="35.0" prefWidth="60.0" text="Ans">
+            <Button fx:id="ans" alignment="CENTER" layoutX="506.0" layoutY="203.0" mnemonicParsing="false" onAction="#memorianterior" prefHeight="35.0" prefWidth="60.0" text="Ans">
                <font>
                   <Font name="Arial" size="18.0" />
                </font>
@@ -76,17 +76,47 @@
                   <Font name="Arial" size="42.0" />
                </font>
             </Label>
-            <Button fx:id="precisao" alignment="CENTER" layoutX="427.0" layoutY="163.0" mnemonicParsing="false" onAction="#setPrecisao" prefHeight="35.0" prefWidth="60.0" text="Pre">
+            <Button fx:id="precisao" alignment="CENTER" layoutX="506.0" layoutY="163.0" mnemonicParsing="false" onAction="#setPrecisao" prefHeight="35.0" prefWidth="60.0" text="Pre">
                <font>
                   <Font name="Arial" size="18.0" />
                </font>
             </Button>
-            <Button fx:id="expoente" alignment="BOTTOM_CENTER" layoutX="326.0" layoutY="83.0" mnemonicParsing="false" onAction="#Exponenciacao" prefHeight="35.0" prefWidth="60.0" text="^">
+            <Button fx:id="expoente" alignment="BOTTOM_CENTER" layoutX="326.0" layoutY="83.0" mnemonicParsing="false" onAction="#exponenciacao" prefHeight="35.0" prefWidth="60.0" text="^">
                <font>
                   <Font name="Arial" size="18.0" />
                </font>
             </Button>
-            <Button fx:id="raiz" alignment="BOTTOM_CENTER" layoutX="326.0" layoutY="122.0" mnemonicParsing="false" onAction="#radiciacao" prefHeight="35.0" prefWidth="60.0" text="√">
+            <Button fx:id="raiz" alignment="BOTTOM_CENTER" layoutX="391.0" layoutY="83.0" mnemonicParsing="false" onAction="#radiciacao" prefHeight="35.0" prefWidth="60.0" text="√">
+               <font>
+                  <Font name="Arial" size="18.0" />
+               </font>
+            </Button>
+            <Button fx:id="cosseno" alignment="BOTTOM_CENTER" layoutX="326.0" layoutY="163.0" mnemonicParsing="false" onAction="#encontrarCos" prefHeight="35.0" prefWidth="60.0" text="Cos">
+               <font>
+                  <Font name="Arial" size="18.0" />
+               </font>
+            </Button>
+            <Button fx:id="seno" alignment="BOTTOM_CENTER" layoutX="326.0" layoutY="203.0" mnemonicParsing="false" onAction="#encontrarSin" prefHeight="35.0" prefWidth="60.0" text="Sin">
+               <font>
+                  <Font name="Arial" size="18.0" />
+               </font>
+            </Button>
+            <Button fx:id="tangente" alignment="BOTTOM_CENTER" layoutX="326.0" layoutY="123.0" mnemonicParsing="false" onAction="#encontrarTan" prefHeight="35.0" prefWidth="60.0" text="Tan">
+               <font>
+                  <Font name="Arial" size="18.0" />
+               </font>
+            </Button>
+            <Button fx:id="logaritmoNatural" alignment="BOTTOM_CENTER" layoutX="391.0" layoutY="203.0" mnemonicParsing="false" onAction="#logEuler" prefHeight="35.0" prefWidth="60.0" text="Ln">
+               <font>
+                  <Font name="Arial" size="18.0" />
+               </font>
+            </Button>
+            <Button fx:id="logaritmo10" alignment="BOTTOM_CENTER" layoutX="391.0" layoutY="123.0" mnemonicParsing="false" onAction="#log10" prefHeight="35.0" prefWidth="60.0" text="Log">
+               <font>
+                  <Font name="Arial" size="18.0" />
+               </font>
+            </Button>
+            <Button fx:id="logaritmo2" alignment="BOTTOM_CENTER" layoutX="391.0" layoutY="163.0" mnemonicParsing="false" onAction="#logBinario" prefHeight="35.0" prefWidth="60.0" text="Lb">
                <font>
                   <Font name="Arial" size="18.0" />
                </font>
