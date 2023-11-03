@@ -113,10 +113,11 @@ public class calculadoraController implements Initializable{
         try{
             setX();
             int p = Integer.parseInt(txtX.getText());
+            if(p < 0) throw new IllegalArgumentException();
             Operacao2.precisao = p;
-        } catch(Exception e) {
-            JOptionPane.showConfirmDialog(null, e.getMessage(), "Alerta", JOptionPane.WARNING_MESSAGE);
-        }
+        } catch(Exception e){
+            JOptionPane.showConfirmDialog(null, "Digite um número inteiro positivo.", "Alerta", JOptionPane.WARNING_MESSAGE);
+        } 
         txtX.setText(null);
         txtY.setText(null);
         txtResultado.setText(null);
@@ -137,6 +138,9 @@ public class calculadoraController implements Initializable{
             x = Double.parseDouble(txtX.getText());
             y = Double.parseDouble(txtY.getText());
         } catch(NumberFormatException e) {
+            txtX.setText(null);
+            txtY.setText(null);
+            txtResultado.setText(null);
             throw new Exception("Os campos X e Y não podem conter texto.");
         } catch (NullPointerException e){
             throw new Exception("Os campos X e Y não podem estar vazios.");
