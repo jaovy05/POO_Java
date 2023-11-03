@@ -1,0 +1,37 @@
+{
+    // Use IntelliSense to learn about possible attributes.
+    // Hover to view descriptions of existing attributes.
+    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "type": "java",
+            "name": "Main",
+            "request": "launch",
+            "mainClass": "operacoes.OperacoesTipo2.Main",
+            "projectName": "atvCalculadora_880f8c57"
+        },
+        {
+            "type": "java",
+            "name": "App",
+            "request": "launch",
+            "mainClass": "App",
+            "projectName": "atvCalculadora_880f8c57",
+            "vmArgs": "--module-path C:/Users/User/Desktop/faculdade_cc/3semestre/prog1/javafx-sdk-21.0.1/lib --add-modules javafx.controls,javafx.fxml"
+        },
+        {
+            "type": "java",
+            "name": "Current File",
+            "request": "launch",
+            "mainClass": "${file}"
+        },
+        {
+            "type": "java",
+            "name": "App",
+            "request": "launch",
+            "mainClass": "App",
+            "projectName": "interface_3a70a70e"
+        }
+    ]
+    //C:\Users\User\Desktop\faculdade_cc\3semestre\prog1\javafx-sdk-21.0.1\lib
+}
