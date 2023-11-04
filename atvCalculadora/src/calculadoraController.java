@@ -40,6 +40,9 @@ public class calculadoraController implements Initializable{
     private Button Cubo;
 
     @FXML
+    private Button Euler;
+
+    @FXML
     private Button ans;
 
     @FXML
@@ -62,6 +65,9 @@ public class calculadoraController implements Initializable{
 
     @FXML
     private Button multiplicacao;
+
+    @FXML
+    private Button pi;
 
     @FXML
     private Button precisao;
@@ -188,16 +194,24 @@ public class calculadoraController implements Initializable{
     }
 
     @FXML
-    void memorianterior(ActionEvent event) {
+    void setAns(ActionEvent event) {
         //Esse é o ans, pega o valor que estiver no resultado e move para o campo x
         try{
-            Double.parseDouble(txtResultado.getText());
-            txtX.setText(txtResultado.getText());
+            setInput(Double.parseDouble(txtResultado.getText()));
         } catch(Exception e){
             JOptionPane.showConfirmDialog(null, "Faça uma operação primeiro", "Alerta", JOptionPane.WARNING_MESSAGE);
         }
-        txtY.setText(null);
         txtResultado.setText(null);
+    }
+
+    @FXML
+    void setEuler(ActionEvent event) {
+        setInput(Math.E);
+    }
+
+    @FXML
+    void setPi(ActionEvent event) {
+        setInput(Math.PI);
     }
 
     @FXML
@@ -218,7 +232,7 @@ public class calculadoraController implements Initializable{
     void calcular(String simbolo){
         try{
             setXY();
-            getXY(simbolo);
+            get(simbolo);
         } catch(Exception e) {
             JOptionPane.showConfirmDialog(null, e.getMessage(), "Alerta", JOptionPane.WARNING_MESSAGE);
         }
@@ -227,7 +241,7 @@ public class calculadoraController implements Initializable{
     void calcular(String simbolo, TextField txtX){
         try{
             setX();
-            getXY(simbolo);
+            get(simbolo);
         } catch(Exception e) {
             JOptionPane.showConfirmDialog(null, e.getMessage(), "Alerta", JOptionPane.WARNING_MESSAGE);
         }
@@ -263,7 +277,7 @@ public class calculadoraController implements Initializable{
         
     }
     
-    void getXY(String simbolo) throws Exception{
+    void get(String simbolo) throws Exception{
         //coloca o valor de "res(simbolo)" no campo resultado
         try{
             txtResultado.setText(String.valueOf(res(simbolo)));
@@ -287,6 +301,11 @@ public class calculadoraController implements Initializable{
                 return op.executar(x);
 
         throw new RuntimeException("Função não encontrada.");
+    }
+
+    void setInput(double valor){
+        if(txtX.getText() == null) txtX.setText(String.valueOf(valor));
+        else txtY.setText(String.valueOf(valor));
     }
 
 }
