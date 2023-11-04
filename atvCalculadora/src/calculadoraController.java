@@ -12,6 +12,10 @@ import operacoes.OperacoesTipo1.Lb;
 import operacoes.OperacoesTipo1.Ln;
 import operacoes.OperacoesTipo1.Log;
 import operacoes.OperacoesTipo1.Operacao1;
+import operacoes.OperacoesTipo1.Quadrado;
+import operacoes.OperacoesTipo1.RaizCubica;
+import operacoes.OperacoesTipo1.RaizQuadrada;
+import operacoes.OperacoesTipo1.Cubo;
 import operacoes.OperacoesTipo1.Sen;
 import operacoes.OperacoesTipo1.Tan;
 import operacoes.OperacoesTipo2.Divisao;
@@ -25,11 +29,15 @@ import operacoes.OperacoesTipo2.Exponenciacao;
 public class calculadoraController implements Initializable{
     Double x, y, res;
     Operacao2 []operacoes2 = {new Soma(), new Subtracao(), new Multiplicacao(), new Divisao(), new Raiz(), new Exponenciacao()};
-    Operacao1 []operacoes1 = {new Lb(), new Ln(), new Log(), new Cos(), new Sen(), new Tan()};
+    Operacao1 []operacoes1 = {new Lb(), new Ln(), new Log(), new Cos(), new Sen(), new Tan(), new Cubo(), new Quadrado(),
+            new RaizCubica(), new RaizQuadrada()};
     //inicia o vetor com todas as operações;
     
     @FXML
     private TitledPane Calculadora;
+
+    @FXML
+    private Button Cubo;
 
     @FXML
     private Button ans;
@@ -59,7 +67,16 @@ public class calculadoraController implements Initializable{
     private Button precisao;
 
     @FXML
+    private Button quadrado;
+
+    @FXML
     private Button raiz;
+
+    @FXML
+    private Button raizCubica;
+
+    @FXML
+    private Button raizQuadrada;
 
     @FXML
     private Button seno;
@@ -116,8 +133,28 @@ public class calculadoraController implements Initializable{
     }
 
     @FXML
+    void exponenciacaoQuadrado(ActionEvent event) {
+        calcular("^2", txtX);
+    }
+    
+    @FXML
+    void exponenciacaoCubo(ActionEvent event) {
+        calcular("^3", txtX);
+    }
+
+    @FXML
     void radiciacao(ActionEvent event) {
-        calcular("sqrt");
+        calcular("xrt");
+    }
+    
+    @FXML
+    void radiciacaoCubica(ActionEvent event) {
+        calcular("cbrt", txtX);
+    }
+
+    @FXML
+    void radiciacaoQuadrada(ActionEvent event) {
+        calcular("sqrt", txtX);
     }
 
     @FXML
@@ -249,7 +286,7 @@ public class calculadoraController implements Initializable{
             if(op.getSimbolo().equals(simbolo))
                 return op.executar(x);
 
-        throw new RuntimeException("Impossivél.");
+        throw new RuntimeException("Função não encontrada.");
     }
 
 }

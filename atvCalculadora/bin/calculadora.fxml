@@ -66,7 +66,7 @@
                   <Font name="Arial" size="18.0" />
                </font>
             </Button>
-            <Button fx:id="ans" alignment="CENTER" layoutX="506.0" layoutY="203.0" mnemonicParsing="false" onAction="#memorianterior" prefHeight="35.0" prefWidth="60.0" text="Ans">
+            <Button fx:id="ans" alignment="CENTER" layoutX="521.0" layoutY="203.0" mnemonicParsing="false" onAction="#memorianterior" prefHeight="35.0" prefWidth="60.0" text="Ans">
                <font>
                   <Font name="Arial" size="18.0" />
                </font>
@@ -76,7 +76,7 @@
                   <Font name="Arial" size="42.0" />
                </font>
             </Label>
-            <Button fx:id="precisao" alignment="CENTER" layoutX="506.0" layoutY="163.0" mnemonicParsing="false" onAction="#setPrecisao" prefHeight="35.0" prefWidth="60.0" text="Pre">
+            <Button fx:id="precisao" alignment="CENTER" layoutX="521.0" layoutY="163.0" mnemonicParsing="false" onAction="#setPrecisao" prefHeight="35.0" prefWidth="60.0" text="Pre">
                <font>
                   <Font name="Arial" size="18.0" />
                </font>
@@ -86,7 +86,7 @@
                   <Font name="Arial" size="18.0" />
                </font>
             </Button>
-            <Button fx:id="raiz" alignment="BOTTOM_CENTER" layoutX="391.0" layoutY="83.0" mnemonicParsing="false" onAction="#radiciacao" prefHeight="35.0" prefWidth="60.0" text="√">
+            <Button fx:id="raiz" alignment="BOTTOM_CENTER" layoutX="391.0" layoutY="83.0" mnemonicParsing="false" onAction="#radiciacao" prefHeight="35.0" prefWidth="60.0" text="y√">
                <font>
                   <Font name="Arial" size="18.0" />
                </font>
@@ -117,6 +117,26 @@
                </font>
             </Button>
             <Button fx:id="logaritmo2" alignment="BOTTOM_CENTER" layoutX="391.0" layoutY="163.0" mnemonicParsing="false" onAction="#logBinario" prefHeight="35.0" prefWidth="60.0" text="Lb">
+               <font>
+                  <Font name="Arial" size="18.0" />
+               </font>
+            </Button>
+            <Button fx:id="raizCubica" alignment="BOTTOM_CENTER" layoutX="456.0" layoutY="83.0" mnemonicParsing="false" onAction="#radiciacaoCubica" prefHeight="35.0" prefWidth="60.0" text="∛">
+               <font>
+                  <Font name="Arial" size="18.0" />
+               </font>
+            </Button>
+            <Button fx:id="raizQuadrada" alignment="BOTTOM_CENTER" layoutX="456.0" layoutY="123.0" mnemonicParsing="false" onAction="#radiciacaoQuadrada" prefHeight="35.0" prefWidth="60.0" text="√">
+               <font>
+                  <Font name="Arial" size="18.0" />
+               </font>
+            </Button>
+            <Button fx:id="quadrado" alignment="BOTTOM_CENTER" layoutX="456.0" layoutY="163.0" mnemonicParsing="false" onAction="#exponenciacaoQuadrado" prefHeight="35.0" prefWidth="60.0" text="x²">
+               <font>
+                  <Font name="Arial" size="18.0" />
+               </font>
+            </Button>
+            <Button fx:id="Cubo" alignment="BOTTOM_CENTER" layoutX="456.0" layoutY="203.0" mnemonicParsing="false" onAction="#exponenciacaoCubo" prefHeight="35.0" prefWidth="60.0" text="x³">
                <font>
                   <Font name="Arial" size="18.0" />
                </font>

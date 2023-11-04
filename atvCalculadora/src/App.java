@@ -20,6 +20,5 @@ public class App extends Application{
         primaryStage.setTitle("Calculadora");
         primaryStage.setScene(tela);
         primaryStage.show();
-        
     }
 }

@@ -3,7 +3,7 @@ package operacoes.OperacoesTipo2;
 public class Raiz extends Operacao2{
 
     public Raiz(){
-        super("sqrt");
+        super("xrt");
     } 
 
     public double executar(int x, int y){
@@ -11,7 +11,7 @@ public class Raiz extends Operacao2{
     }
 
     public double executar (double x, double y) {
-        if(x < 0) throw new ArithmeticException("Não existe raiz de números negativos no conjunto dos reais.");
+        if(x < 0) throw new ArithmeticException("Não existe raiz de números negativos.");
         if(y == 0) throw new ArithmeticException("Não existe raiz de índice 0.");
         
         return truncarValor(Math.pow(x, 1/y), precisao);
