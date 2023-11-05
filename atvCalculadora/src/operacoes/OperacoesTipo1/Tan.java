@@ -10,7 +10,7 @@ public class Tan extends Operacao1{
     }
 
     public double executar(double x){
-        if(Math.cos(x) == 0) throw new ArithmeticException("Não existe tangente para π/2 + kπ, k sendo um inteiro qualquer.");
+        if(Math.abs(Math.cos(x)) < 1e-8) throw new ArithmeticException("Não existe tangente para π/2 + kπ, k sendo um inteiro qualquer.");
         return truncarValor(Math.tan(x), precisao);
     }
 
