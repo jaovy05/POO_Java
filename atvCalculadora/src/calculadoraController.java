@@ -5,6 +5,7 @@ import javafx.scene.control.TextField;
 import javafx.fxml.Initializable;
 import javax.swing.JOptionPane;
 import javafx.event.ActionEvent;
+import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.TitledPane;
 import operacoes.OperacoesTipo1.Cos;
@@ -53,6 +54,9 @@ public class calculadoraController implements Initializable{
 
     @FXML
     private Button expoente;
+
+    @FXML
+    private Button instrucoes;
 
     @FXML
     private Button logaritmo10;
@@ -229,6 +233,39 @@ public class calculadoraController implements Initializable{
         txtResultado.setText(null);
     } 
 
+    @FXML
+    private void mostrarMenu(ActionEvent event) {
+
+        String instrucoes = 
+            "Bem-vindo à calculadora!\n\n" +
+            "Instruções:\n" +
+            "1. Entrada de Dados:\n" +
+            "   - O campo X é o primeiro valor, e Y é o segundo valor.\n" +
+            "   - Para operações trigonométricas e logarítmicas, somente X é necessário.\n" +
+            "   - Raízes e exponenciação quadrática ou cúbica requerem apenas X.\n" +
+            "   - Outras operações necessitam tanto de X quanto de Y.\n" +
+            "2. Escolha da Operação:\n" +
+            "   - Selecione a operação desejada (Soma, Subtração, etc.).\n" +
+            "   - Use 'Lb' para log na base 2.\n" +
+            "   - '-' para X - Y, '/' para X / Y, 'y√' para √X com índice Y, '^' para X^Y.\n" +
+            "3. Calcular:\n" +
+            "   - Clique no botão correspondente para calcular.\n" +
+            "4. Resultado:\n" +
+            "   - O resultado será exibido no campo Resultado.\n" +
+            "5. Valores Padrão:\n" +
+            "   - Botões para valores especiais, como 'Ans' para mover o resultado, 'e' para o número de Euler, 'π' para π.\n" +
+            "   - Os valores têm preferência pelo campo X; se o próprio não estiver vazio, são inseridos no Y.\n" +
+            "6. Precisão:\n" +
+            "   - Use o botão 'Pre' para configurar a precisão (0 a 10).";
+        
+         
+        Alert alert = new Alert(Alert.AlertType.INFORMATION);
+        alert.setTitle("Instruções");
+        alert.setHeaderText(null);
+        alert.setContentText(instrucoes);
+        alert.showAndWait();
+    }
+
     void calcular(String simbolo){
         try{
             setXY();
@@ -307,5 +344,4 @@ public class calculadoraController implements Initializable{
         if(txtX.getText() == null) txtX.setText(String.valueOf(valor));
         else txtY.setText(String.valueOf(valor));
     }
-
 }

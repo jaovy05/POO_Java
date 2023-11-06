@@ -44,113 +44,127 @@
   <content>
     <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
          <children>
-            <TextField fx:id="txtY" layoutX="42.0" layoutY="124.0" prefHeight="30.0" prefWidth="165.0" />
-            <TextField fx:id="txtX" layoutX="42.0" layoutY="83.0" prefHeight="30.0" prefWidth="165.0" />
-            <TextField fx:id="txtResultado" layoutX="42.0" layoutY="208.0" prefHeight="30.0" prefWidth="165.0" />
-            <Button fx:id="soma" alignment="CENTER" layoutX="261.0" layoutY="83.0" mnemonicParsing="false" onAction="#somar" prefHeight="35.0" prefWidth="60.0" text="+">
+            <TextField fx:id="txtY" layoutX="26.0" layoutY="150.0" prefHeight="42.0" prefWidth="198.0">
                <font>
                   <Font name="Arial" size="18.0" />
-               </font>
-            </Button>
-            <Button fx:id="multiplicacao" alignment="CENTER" layoutX="261.0" layoutY="163.0" mnemonicParsing="false" onAction="#multiplicar" prefHeight="35.0" prefWidth="60.0" text="x">
+               </font></TextField>
+            <TextField fx:id="txtX" layoutX="26.0" layoutY="94.0" prefHeight="42.0" prefWidth="198.0">
                <font>
                   <Font name="Arial" size="18.0" />
-               </font>
-            </Button>
-            <Button fx:id="subtracao" alignment="CENTER" layoutX="261.0" layoutY="123.0" mnemonicParsing="false" onAction="#subtrair" prefHeight="35.0" prefWidth="60.0" text="-" textAlignment="CENTER">
+               </font></TextField>
+            <TextField fx:id="txtResultado" layoutX="26.0" layoutY="238.0" prefHeight="42.0" prefWidth="198.0">
                <font>
                   <Font name="Arial" size="18.0" />
+               </font></TextField>
+            <Button fx:id="soma" alignment="CENTER" layoutX="283.0" layoutY="98.0" mnemonicParsing="false" onAction="#somar" prefHeight="42.0" prefWidth="72.0" text="+">
+               <font>
+                  <Font name="Arial" size="22.0" />
                </font>
             </Button>
-            <Button fx:id="divisao" alignment="CENTER" layoutX="261.0" layoutY="203.0" mnemonicParsing="false" onAction="#dividir" prefHeight="35.0" prefWidth="60.0" text="/">
+            <Button fx:id="multiplicacao" alignment="CENTER" layoutX="283.0" layoutY="194.0" mnemonicParsing="false" onAction="#multiplicar" prefHeight="42.0" prefWidth="72.0" text="x">
                <font>
-                  <Font name="Arial" size="18.0" />
+                  <Font name="Arial" size="22.0" />
                </font>
             </Button>
-            <Button fx:id="ans" alignment="CENTER" layoutX="521.0" layoutY="203.0" mnemonicParsing="false" onAction="#setAns" prefHeight="35.0" prefWidth="60.0" text="Ans">
+            <Button fx:id="subtracao" alignment="CENTER" layoutX="283.0" layoutY="146.0" mnemonicParsing="false" onAction="#subtrair" prefHeight="42.0" prefWidth="72.0" text="-">
                <font>
-                  <Font name="Arial" size="18.0" />
+                  <Font name="Arial" size="22.0" />
                </font>
             </Button>
-            <Label alignment="CENTER" layoutX="95.0" layoutY="158.0" prefHeight="23.0" prefWidth="55.0" text="=">
+            <Button fx:id="divisao" alignment="CENTER" layoutX="283.0" layoutY="242.0" mnemonicParsing="false" onAction="#dividir" prefHeight="42.0" prefWidth="72.0" text="/">
                <font>
-                  <Font name="Arial" size="42.0" />
+                  <Font name="Arial" size="22.0" />
+               </font>
+            </Button>
+            <Button fx:id="ans" alignment="CENTER" layoutX="595.0" layoutY="242.0" mnemonicParsing="false" onAction="#setAns" prefHeight="42.0" prefWidth="72.0" text="Ans">
+               <font>
+                  <Font name="Arial" size="22.0" />
+               </font>
+            </Button>
+            <Label alignment="CENTER" layoutX="92.5" layoutY="186.0" prefHeight="54.0" prefWidth="65.0" text="=">
+               <font>
+                  <Font name="Arial" size="50.0" />
                </font>
             </Label>
-            <Button fx:id="precisao" alignment="CENTER" layoutX="521.0" layoutY="163.0" mnemonicParsing="false" onAction="#setPrecisao" prefHeight="35.0" prefWidth="60.0" text="Pre">
+            <Button fx:id="precisao" alignment="CENTER" layoutX="595.0" layoutY="194.0" mnemonicParsing="false" onAction="#setPrecisao" prefHeight="42.0" prefWidth="72.0" text="Pre">
                <font>
-                  <Font name="Arial" size="18.0" />
+                  <Font name="Arial" size="22.0" />
                </font>
             </Button>
-            <Button fx:id="expoente" alignment="BOTTOM_CENTER" layoutX="326.0" layoutY="83.0" mnemonicParsing="false" onAction="#exponenciacao" prefHeight="35.0" prefWidth="60.0" text="^">
+            <Button fx:id="expoente" alignment="CENTER" layoutX="361.0" layoutY="98.0" mnemonicParsing="false" onAction="#exponenciacao" prefHeight="42.0" prefWidth="72.0" text="^">
                <font>
-                  <Font name="Arial" size="18.0" />
+                  <Font name="Arial" size="22.0" />
                </font>
             </Button>
-            <Button fx:id="raiz" alignment="BOTTOM_CENTER" layoutX="391.0" layoutY="83.0" mnemonicParsing="false" onAction="#radiciacao" prefHeight="35.0" prefWidth="60.0" text="y√">
+            <Button fx:id="raiz" alignment="CENTER" layoutX="439.0" layoutY="98.0" mnemonicParsing="false" onAction="#radiciacao" prefHeight="42.0" prefWidth="72.0" text="y√">
                <font>
-                  <Font name="Arial" size="18.0" />
+                  <Font name="Arial" size="22.0" />
                </font>
             </Button>
-            <Button fx:id="cosseno" alignment="BOTTOM_CENTER" layoutX="326.0" layoutY="163.0" mnemonicParsing="false" onAction="#encontrarCos" prefHeight="35.0" prefWidth="60.0" text="Cos">
+            <Button fx:id="cosseno" alignment="CENTER" layoutX="361.0" layoutY="194.0" mnemonicParsing="false" onAction="#encontrarCos" prefHeight="42.0" prefWidth="72.0" text="Cos">
                <font>
-                  <Font name="Arial" size="18.0" />
+                  <Font name="Arial" size="22.0" />
                </font>
             </Button>
-            <Button fx:id="seno" alignment="BOTTOM_CENTER" layoutX="326.0" layoutY="203.0" mnemonicParsing="false" onAction="#encontrarSin" prefHeight="35.0" prefWidth="60.0" text="Sin">
+            <Button fx:id="seno" alignment="CENTER" layoutX="361.0" layoutY="242.0" mnemonicParsing="false" onAction="#encontrarSin" prefHeight="42.0" prefWidth="72.0" text="Sin">
                <font>
-                  <Font name="Arial" size="18.0" />
+                  <Font name="Arial" size="22.0" />
                </font>
             </Button>
-            <Button fx:id="tangente" alignment="BOTTOM_CENTER" layoutX="326.0" layoutY="123.0" mnemonicParsing="false" onAction="#encontrarTan" prefHeight="35.0" prefWidth="60.0" text="Tan">
+            <Button fx:id="tangente" alignment="CENTER" layoutX="361.0" layoutY="146.0" mnemonicParsing="false" onAction="#encontrarTan" prefHeight="42.0" prefWidth="72.0" text="Tan">
                <font>
-                  <Font name="Arial" size="18.0" />
+                  <Font name="Arial" size="22.0" />
                </font>
             </Button>
-            <Button fx:id="logaritmoNatural" alignment="BOTTOM_CENTER" layoutX="391.0" layoutY="203.0" mnemonicParsing="false" onAction="#logEuler" prefHeight="35.0" prefWidth="60.0" text="Ln">
+            <Button fx:id="logaritmoNatural" alignment="CENTER" layoutX="439.0" layoutY="242.0" mnemonicParsing="false" onAction="#logEuler" prefHeight="42.0" prefWidth="72.0" text="Ln">
                <font>
-                  <Font name="Arial" size="18.0" />
+                  <Font name="Arial" size="22.0" />
                </font>
             </Button>
-            <Button fx:id="logaritmo10" alignment="BOTTOM_CENTER" layoutX="391.0" layoutY="123.0" mnemonicParsing="false" onAction="#log10" prefHeight="35.0" prefWidth="60.0" text="Log">
+            <Button fx:id="logaritmo10" alignment="CENTER" layoutX="439.0" layoutY="146.0" mnemonicParsing="false" onAction="#log10" prefHeight="42.0" prefWidth="72.0" text="Log">
                <font>
-                  <Font name="Arial" size="18.0" />
+                  <Font name="Arial" size="22.0" />
                </font>
             </Button>
-            <Button fx:id="logaritmo2" alignment="BOTTOM_CENTER" layoutX="391.0" layoutY="163.0" mnemonicParsing="false" onAction="#logBinario" prefHeight="35.0" prefWidth="60.0" text="Lb">
+            <Button fx:id="logaritmo2" alignment="CENTER" layoutX="439.0" layoutY="194.0" mnemonicParsing="false" onAction="#logBinario" prefHeight="42.0" prefWidth="72.0" text="Lb">
                <font>
-                  <Font name="Arial" size="18.0" />
+                  <Font name="Arial" size="22.0" />
                </font>
             </Button>
-            <Button fx:id="raizCubica" alignment="BOTTOM_CENTER" layoutX="456.0" layoutY="83.0" mnemonicParsing="false" onAction="#radiciacaoCubica" prefHeight="35.0" prefWidth="60.0" text="∛">
+            <Button fx:id="raizCubica" alignment="CENTER" layoutX="517.0" layoutY="98.0" mnemonicParsing="false" onAction="#radiciacaoCubica" prefHeight="42.0" prefWidth="72.0" text="∛">
                <font>
-                  <Font name="Arial" size="18.0" />
+                  <Font name="Arial" size="22.0" />
                </font>
             </Button>
-            <Button fx:id="raizQuadrada" alignment="BOTTOM_CENTER" layoutX="456.0" layoutY="123.0" mnemonicParsing="false" onAction="#radiciacaoQuadrada" prefHeight="35.0" prefWidth="60.0" text="√">
+            <Button fx:id="raizQuadrada" alignment="CENTER" layoutX="517.0" layoutY="146.0" mnemonicParsing="false" onAction="#radiciacaoQuadrada" prefHeight="42.0" prefWidth="72.0" text="√">
                <font>
-                  <Font name="Arial" size="18.0" />
+                  <Font name="Arial" size="22.0" />
                </font>
             </Button>
-            <Button fx:id="quadrado" alignment="BOTTOM_CENTER" layoutX="456.0" layoutY="163.0" mnemonicParsing="false" onAction="#exponenciacaoQuadrado" prefHeight="35.0" prefWidth="60.0" text="x²">
+            <Button fx:id="quadrado" alignment="CENTER" layoutX="517.0" layoutY="194.0" mnemonicParsing="false" onAction="#exponenciacaoQuadrado" prefHeight="42.0" prefWidth="72.0" text="x²">
                <font>
-                  <Font name="Arial" size="18.0" />
+                  <Font name="Arial" size="22.0" />
                </font>
             </Button>
-            <Button fx:id="Cubo" alignment="BOTTOM_CENTER" layoutX="456.0" layoutY="203.0" mnemonicParsing="false" onAction="#exponenciacaoCubo" prefHeight="35.0" prefWidth="60.0" text="x³">
+            <Button fx:id="Cubo" alignment="CENTER" layoutX="517.0" layoutY="242.0" mnemonicParsing="false" onAction="#exponenciacaoCubo" prefHeight="42.0" prefWidth="72.0" text="x³">
                <font>
-                  <Font name="Arial" size="18.0" />
+                  <Font name="Arial" size="22.0" />
                </font>
             </Button>
-            <Separator layoutX="228.0" layoutY="-3.0" orientation="VERTICAL" prefHeight="432.0" prefWidth="0.0" />
-            <Button fx:id="pi" alignment="CENTER" layoutX="521.0" layoutY="83.0" mnemonicParsing="false" onAction="#setPi" prefHeight="35.0" prefWidth="60.0" text="π">
+            <Separator layoutX="250.0" orientation="VERTICAL" prefHeight="426.0" prefWidth="6.0" />
+            <Button fx:id="pi" alignment="CENTER" layoutX="595.0" layoutY="98.0" mnemonicParsing="false" onAction="#setPi" prefHeight="42.0" prefWidth="72.0" text="π">
                <font>
-                  <Font name="Arial" size="18.0" />
+                  <Font name="Arial" size="22.0" />
                </font>
             </Button>
-            <Button fx:id="Euler" alignment="CENTER" layoutX="521.0" layoutY="123.0" mnemonicParsing="false" onAction="#setEuler" prefHeight="35.0" prefWidth="60.0" text="e">
+            <Button fx:id="Euler" alignment="CENTER" layoutX="595.0" layoutY="146.0" mnemonicParsing="false" onAction="#setEuler" prefHeight="42.0" prefWidth="72.0" text="e">
                <font>
-                  <Font name="Arial" size="18.0" />
+                  <Font name="Arial" size="22.0" />
+               </font>
+            </Button>
+            <Button fx:id="instrucoes" alignment="CENTER" layoutX="402.0" layoutY="337.0" mnemonicParsing="false" onAction="#mostrarMenu" prefHeight="42.0" prefWidth="146.0" text="Instruções">
+               <font>
+                  <Font name="Arial" size="22.0" />
                </font>
             </Button>
          </children></AnchorPane>
